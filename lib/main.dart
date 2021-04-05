@@ -36,13 +36,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    const productImage =
+        'https://i.pinimg.com/originals/8f/bf/44/8fbf441fa92b29ebd0f324effbd4e616.png';
+
     return Scaffold(
         backgroundColor: Colors.green,
         body: SafeArea(
           child: Column(
             children: [
               Expanded(
-                  flex: 3,
+                  flex: 4,
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -54,10 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(18.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: Icon(
                                 Icons.arrow_back,
-                                size: 36.0,
+                                size: 32.0,
                               ),
                             )
                           ],
@@ -76,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
-                                  height: 10.0,
+                                  height: 2.0,
                                 ),
                                 Text(
                                   '10* Nursery Pot',
@@ -84,9 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: Colors.black38,
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 15.0,
                                 ),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -101,23 +101,64 @@ class _MyHomePageState extends State<MyHomePage> {
                                           fontSize: 50.0, color: Colors.green),
                                     )
                                   ],
-                                )
+                                ),
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: FloatingActionButton(
+                                  onPressed: () {},
+                                  backgroundColor: Colors.green,
+                                  child: Icon(Icons.plus_one),
+                                ),
+                              ),
+                              Container(
+                                width: 150,
+                                child: Image.network(
+                                  productImage,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   )),
               Expanded(
-                  child: Container(
-                width: double.infinity,
-                color: Colors.green,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 100),
-                  child: Text('denemelercesine'),
-                ),
-              ))
+                child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    width: double.infinity,
+                    color: Colors.green,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [Text('some text')],
+                        ),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  color: Colors.red,
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    )),
+              )
             ],
           ),
         ));
